@@ -1,32 +1,26 @@
 interface ApiResponse<T> {
     data: T
     message: string
-    code: number
-    success: boolean
+    statue: number
 }
 
 interface PageInfo {
-    totalPages: number
-    currentPage: number
-    hasNextPage: boolean
-    hasPreviousPage: boolean
-    totalItems: number
+    current_page: number
+    has_more: boolean
+    last_page: number
+    per_page: number
+    total: number
 }
 
 interface PaginatedApiResponse<T> {
-    data: {
-        items: T[]
-        pageInfo: PageInfo
-    }
-    message: string
-    code: number
-    success: boolean
+    data: T[]
+    pagination: PageInfo
 }
 
 interface ErrorResponse {
     data: {
         message: string
         code: number
-        success: boolean
+        statue: number
     }
 }
